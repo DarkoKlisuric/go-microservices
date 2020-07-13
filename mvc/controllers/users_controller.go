@@ -11,7 +11,7 @@ import (
 // curl localhost:8000/users?user_id=1
 func GetUser(resp http.ResponseWriter, req *http.Request) {
 
-	userId, err := strconv.ParseInt(req.URL.Query().Get("user_id"), 10 ,64)
+	userId, err := strconv.ParseInt(req.URL.Query().Get("user_id"), 10, 64)
 
 	if err != nil {
 
@@ -36,6 +36,6 @@ func GetUser(resp http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	jsonValue, _:= json.Marshal(user)
+	jsonValue, _ := json.Marshal(user)
 	resp.Write(jsonValue)
 }
